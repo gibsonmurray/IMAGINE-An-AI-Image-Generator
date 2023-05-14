@@ -44,11 +44,11 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-// templates directory
-app.set("views", path.resolve(process.cwd(), "public", "templates"));
+// // templates directory
+// app.set("views", path.resolve(process.cwd(), "public", "templates"));
 
-// set view engine to display ejs
-app.set("view engine", "ejs");
+// // set view engine to display ejs
+// app.set("view engine", "ejs");
 
 // start that jawn
 console.log(`Web server started and running at http://localhost:${portNumber}`);
