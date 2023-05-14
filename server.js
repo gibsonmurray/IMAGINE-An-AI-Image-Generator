@@ -192,3 +192,23 @@ app.post("/imagine", async (req, res) => {
 app.get("/css/index.css", async (req, res) => {
     res.sendFile(path.join(process.cwd(), "./css/", "index.css"));
 });
+
+app.get("/assets/eye-hide.svg", async (req, res) => {
+    res.sendFile(path.join(process.cwd(), "./assets/", "eye-hide.svg"));
+});
+
+app.get("/assets/eye-hide.svg", async (req, res) => {
+    res.sendFile(path.join(process.cwd(), "./assets/", "eye-hide.svg"));
+});
+
+app.get("/assets/eye-show.svg", async (req, res) => {
+    res.sendFile(path.join(process.cwd(), "./assets/", "eye-show.svg"));
+});
+
+app.get("/js/index.js", async (req, res) => {
+    res.sendFile(path.join(process.cwd(), "./js/", "index.js"));
+});
+
+app.get("/js/imagine.js", async (req, res) => {
+    res.sendFile(path.join(process.cwd(), "./js/", "imagine.js"));
+});
