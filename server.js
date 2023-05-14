@@ -100,7 +100,7 @@ app.use(cookieParser());
 
 // display home page
 app.get("/", (req, res) => {
-    res.sendFile(path.join(process.cwd(), "public", "index.html"));
+    res.sendFile(path.join(process.cwd(), "./", "index.html"));
 });
 
 //sign up user
@@ -157,7 +157,7 @@ app.post("/login", async (req, res) => {
 
 // load imagine page
 app.get("/imagine", async (req, res) => {
-        res.sendFile(path.join(process.cwd(), "public", "imagine.html"));
+        res.sendFile(path.join(process.cwd(), "./", "imagine.html"));
 });
 
 app.post("/logout", (req, res) => {
