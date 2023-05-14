@@ -193,6 +193,10 @@ app.get("/css/index.css", async (req, res) => {
     res.sendFile(path.join(process.cwd(), "./css/", "index.css"));
 });
 
+app.get("/js/imagine.css", async (req, res) => {
+    res.sendFile(path.join(process.cwd(), "./css/", "imagine.css"));
+});
+
 app.get("/assets/eye-hide.svg", async (req, res) => {
     res.sendFile(path.join(process.cwd(), "./assets/", "eye-hide.svg"));
 });
