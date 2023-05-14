@@ -5,10 +5,10 @@ const eye = document.getElementById("eye");
 togglePasswordButton.addEventListener("click", () => {
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
-        eye.src = "../assets/eye-hide.svg";
+        eye.src = "./assets/eye-hide.svg";
     } else {
         passwordInput.type = "password";
-        eye.src = "../assets/eye-show.svg";
+        eye.src = "./assets/eye-show.svg";
     }
 });
 
