@@ -18,7 +18,8 @@ process.stdin.setEncoding("utf8");
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.listen(portNumber);
+const port = process.env.PORT || 3000;
+app.listen(port);
 
 // MONGO DB
 dotenv.config();
@@ -50,46 +51,46 @@ const openai = new OpenAIApi(configuration);
 // // set view engine to display ejs
 // app.set("view engine", "ejs");
 
-// start that jawn
-console.log(`Web server started and running at http://localhost:${portNumber}`);
-const prompt = "Stop to shutdown the server: ";
-process.stdout.write(prompt);
+// // start that jawn
+// console.log(`Web server started and running at http://localhost:${portNumber}`);
+// const prompt = "Stop to shutdown the server: ";
+// process.stdout.write(prompt);
 
-// command line processing
-process.stdin.on("readable", async () => {
-    let dataInput = process.stdin.read();
-    if (dataInput !== null) {
-        let command = dataInput.trim();
-        // STOP SERVER COMMAND
+// // command line processing
+// process.stdin.on("readable", async () => {
+//     let dataInput = process.stdin.read();
+//     if (dataInput !== null) {
+//         let command = dataInput.trim();
+//         // STOP SERVER COMMAND
 
-        if (command === "stop") {
-            console.log("Shutting down the server");
-            process.exit(0);
+//         if (command === "stop") {
+//             console.log("Shutting down the server");
+//             process.exit(0);
 
-            // CLEAR ALL USERS COMMAND
-        } else if (command === "clear users") {
-            const uri = `mongodb+srv://${mongoUserName}:${mongoPassword}@cluster0.qwti5qw.mongodb.net/?retryWrites=true&w=majority`;
-            const client = new MongoClient(uri, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-                serverApi: ServerApiVersion.v1,
-            });
-            await client.connect();
-            const db = client.db(databaseAndCollection.db);
-            const collection = db.collection(
-                databaseAndCollection.collectionUsers
-            );
-            const result = await collection.deleteMany({});
-            console.log(`${result.deletedCount} users(s) deleted`);
+//             // CLEAR ALL USERS COMMAND
+//         } else if (command === "clear users") {
+//             const uri = `mongodb+srv://${mongoUserName}:${mongoPassword}@cluster0.qwti5qw.mongodb.net/?retryWrites=true&w=majority`;
+//             const client = new MongoClient(uri, {
+//                 useNewUrlParser: true,
+//                 useUnifiedTopology: true,
+//                 serverApi: ServerApiVersion.v1,
+//             });
+//             await client.connect();
+//             const db = client.db(databaseAndCollection.db);
+//             const collection = db.collection(
+//                 databaseAndCollection.collectionUsers
+//             );
+//             const result = await collection.deleteMany({});
+//             console.log(`${result.deletedCount} users(s) deleted`);
 
-            // INVALID COMMAND
-        }  else {
-            console.log(`Invalid command: ${command}`);
-        }
-        process.stdout.write(prompt);
-        process.stdin.resume();
-    }
-});
+//             // INVALID COMMAND
+//         }  else {
+//             console.log(`Invalid command: ${command}`);
+//         }
+//         process.stdout.write(prompt);
+//         process.stdin.resume();
+//     }
+// });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.resolve(process.cwd(), "public")));
