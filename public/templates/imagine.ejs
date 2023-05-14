@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Final Project - Imagine</title>
+        <link rel="stylesheet" type="text/css" href="/css/imagine.css" />
+        <script defer type="module" src="./js/imagine.js"></script>
+    </head>
+    <body>
+        <main>
+            <div id="result">Image will appear here</div>
+
+            <form id="gen">
+                <textarea
+                    name="prompt"
+                    maxlength="160"
+                    placeholder="Enter your image description here"
+                ></textarea>
+                <div id="submit-buttons">
+                    <button id="imagine-btn" class="submit-btn" type="submit">
+                        Imagine
+                    </button>
+                    <button
+                        id="logout"
+                        name="logout"
+                        class="submit-btn"
+                        type="submit"
+                    >
+                        Log Out
+                    </button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

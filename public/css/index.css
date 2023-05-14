@@ -1,0 +1,161 @@
+:root {
+    --bg-color: #f0ebe3;
+    --font-color: #850e35;
+    --button-main-color: #ffc4c4;
+    --button-shadow-color: #ee6983;
+    --button-hover-main-color: #ffd7d7;
+    --button-hover-shadow-color: #e98c9e;
+}
+
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+#gradient-canvas {
+  width:100%;
+  height:100%;
+  --gradient-color-1: #c3e4ff; 
+  --gradient-color-2: #6ec3f4; 
+  --gradient-color-3: #eae2ff;  
+  --gradient-color-4: #b9beff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1,
+h3 {
+    color: var(--font-color);
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 40px;
+    margin: 0;
+}
+
+h3 {
+    margin: 4% 0 4% 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input::placeholder {
+    color: var(--font-color);
+}
+
+input[type="text"],
+input[type="password"] {
+    height: 40px;
+    width: 250px;
+    font-size: larger;
+    border-radius: 5px;
+    border-color: var(--button-shadow-color);
+    border-style: solid;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+.password-container {
+    position: relative;
+}
+
+#toggle-password {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+}
+
+#eye {
+    padding: 6px;
+    height: 30px;
+    width: 30px;
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 12px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: var(--font-color);
+    background-color: var(--button-main-color);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 7px var(--button-shadow-color);
+    transition: 300ms;
+}
+
+.submit-btn:hover {
+    background-color: var(--button-hover-main-color);
+    box-shadow: 0 7px var(--button-hover-shadow-color);
+}
+
+.submit-btn:active {
+    box-shadow: 0 0px var(--button-main-color);
+    transform: translateY(7px);
+    background-color: var(--button-shadow-color);
+}
+
+#messages {
+    display: grid;
+    justify-content: center;
+    margin-top: 5%;
+    height: 40px;
+    width: 400px;
+}
+
+.hidden {
+    display: none;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#instructions {
+    position: absolute;
+    bottom: 10px;
+    display: grid;
+    place-items: center;
+}
+
+p {
+    color: var(--font-color);
+    margin: 0;
+    display: inline;
+}

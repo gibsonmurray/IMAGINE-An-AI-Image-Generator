@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Final Project - Login</title>
+        <link rel="stylesheet" type="text/css" href="/css/index.css" />
+        <script defer src="../js/index.js"></script>
+    </head>
+    <body>
+        <main>
+            <div id="container">
+                <h1>Custom Image Generator</h1>
+                <h3><i>Let your imagination run wild...</i></h3>
+                <form method="post">
+                    <input
+                        type="text"
+                        name="username"
+                        id="username"
+                        placeholder="User Name"
+                    />
+                    <br />
+                    <div class="password-container">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Password"
+                        />
+                        <button type="button" id="toggle-password">
+                            <img
+                                src="../assets/eye-show.svg"
+                                id="eye"
+                                alt="Show"
+                            />
+                        </button>
+                    </div>
+                    <br />
+                    <div id="submit-buttons">
+                        <button class="submit-btn" type="submit" name="action" value="login" id="login">
+                            &nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;
+                        </button>
+                        <button class="submit-btn" type="submit" name="action" value="signup" id="signup">
+                            &nbsp;&nbsp;Sign Up&nbsp;&nbsp;
+                        </button>
+                    </div>
+                </form>
+                <div id="messages"></div>
+            </div>
+            <div id="instructions">
+                <p><strong>If you have not already made an account:</strong></p>
+                <p>
+                    Enter credentials and click "<i>Sign Up</i>", then retype
+                    them and click "<i>Login</i>"
+                </p>
+            </div>
+        </main>
+    </body>
+</html>

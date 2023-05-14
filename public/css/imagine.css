@@ -1,0 +1,113 @@
+:root {
+    --bg-color: #f0ebe3;
+    --font-color: #850e35;
+    --placeholder-color: #a06479;
+    --button-main-color: #ffc4c4;
+    --button-shadow-color: #ee6983;
+    --button-hover-main-color: #ffd7d7;
+    --button-hover-shadow-color: #e98c9e;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    margin-top: 3%;
+}
+
+#result {
+    aspect-ratio: 1/1;
+    max-width: 512px;
+    width: 100%;
+    background: var(--button-main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 7px var(--button-shadow-color);
+    border: medium solid var(--button-shadow-color);
+    overflow: hidden;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 512px;
+    margin: 1rem;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin: 2rem;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--button-main-color);
+    box-shadow: 0 7px var(--button-shadow-color);
+    border: none;
+    resize: none;
+    color: var(--font-color);
+}
+
+textarea::placeholder {
+    color: var(--placeholder-color);
+}
+
+.submit-btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 12px 50px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: var(--font-color);
+    background-color: var(--button-main-color);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 7px var(--button-shadow-color);
+    transition: 300ms;
+}
+
+.submit-btn:hover {
+    background-color: var(--button-hover-main-color);
+    box-shadow: 0 7px var(--button-hover-shadow-color);
+}
+
+.submit-btn:active {
+    box-shadow: 0 0px var(--button-main-color);
+    transform: translateY(7px);
+    background-color: var(--button-shadow-color);
+}
+
+.hidden {
+    display: none;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
