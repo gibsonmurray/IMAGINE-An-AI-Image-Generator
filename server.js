@@ -186,3 +186,9 @@ app.post("/imagine", async (req, res) => {
         );
     }
 });
+
+/* ----------------------- OTHER STUFF ----------------------- */
+
+app.get("/css/index.css", async (req, res) => {
+    res.sendFile(path.join(process.cwd(), "./css/", "index.css"));
+});
