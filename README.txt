@@ -7,3 +7,4 @@ APP DESCRIPTION:
     Don't choose a bad username...Enjoy! 😁
 API LINKS: https://platform.openai.com/docs/guides/images
 YOUTUBE VIDEO: https://youtu.be/P6yrcmM0P_I
+APPLICATION LINK: https://cerise-scorpion-tux.cyclic.app/
